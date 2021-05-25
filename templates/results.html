@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Property Price Prediction Model</title>
+</head>
+<body>
+  <style>
+    body {
+    background-image: url('https://images.unsplash.com/photo-1508349937151-22b68b72d5b1?ixlib=rb-1.2.1&w=1000&q=80'); 
+  font-family: 'Lato', sans-serif;
+  
+}
+.container {
+  max-width: 2200px;
+  margin: 0 auto;
+}
+button{
+  padding: 0;
+  font-size: 24px;
+  border: none;
+  background: none;
+  font-weight: 700;
+  margin: 0 1rem;
+  color: white;
+  list-style-type: none;
+  display: flex;
+}
+.parallax{
+  margin 0 auto;
+  background: #f9f9f9;
+  font-size: 24px;
+  padding: 25px;
+}
+#hero {
+  background: url('https://www.davieshomes.co.nz/wp-content/uploads/2019/08/davies-homes-house-background-4.jpg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 800px;
+  color: white;
+
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+}
+li {
+    font-weight: 700;
+    margin: 0 1rem;
+}
+
+.content {
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 100px auto;
+  font-size: 50px;
+}
+.bottom {
+
+  position: absolute;
+  font-size: 18px;
+  color: #fff;
+}
+
+.wrapper{
+  text-align: center;
+}
+.trigger{
+  
+  background-color: beige;
+  border: 2px solid lightblue;
+  border-radius: 30px;
+  text-decoration: none;
+  padding: 10px 28px;
+  color: black;
+  margin: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: inline-block;
+}
+.trigger:hover{
+    background-color: lightsteelblue;
+    color: beige;
+    border: 2px black;
+}
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    }
+.modal-content {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color:  rgb(224, 241, 241);
+    }
+.close-button:hover {
+    background-color: white;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+	
+
+</style>
+<div class="parallax">
+<section id="hero">
+  
+  <div class="container">
+    <nav>
+      <h1 style="font-size: 50px"> Property Price Prediction Model</h1>
+      <ul>
+        <button onclick="Home()">Home</button>
+        <li>About</li>
+      </ul>
+    </div>
+  </nav>
+    <div class="content">
+      
+      <p>Hope You Find Your Perfect Home !</p>
+    </div>
+  </section>
+
+</div>
+    <div class="wrapper">
+    <button class="trigger">REVELIO</button>
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">×</span>
+                <strong style="font-size: 50px ">
+                  <img src="https://media2.giphy.com/media/72HahsJD4atSE/source.gif" style="width:25%; height=25%">
+                    <br>
+                    <p style="font-size: 30px;">Predicted Price</p>
+                    $ {{response | safe}}
+                </strong>
+            </div>
+        </div>
+    </div>
+
+  
+    <br><br><br><br><br><br><br><br><br><br>
+    <p style="text-align: center; font-weight:bold ;color: beige;"><small>© Property Price Prediction Model. University of Technology, Sydney.<br>@Mark Gutierrez @Xu Jing @Gerald Ju @Kyaw Sithu</small><br></p>
+
+</body>
+</html>
+<script>
+var modal = document.querySelector(".modal");
+var trigger = document.querySelector(".trigger");
+var closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+	modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+	if (event.target === modal) {
+		toggleModal();
+	}
+}
+function Home() {
+  window.history.back();
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+</script>

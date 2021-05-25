@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+            
+            /* Create two equal columns that floats next to each other */
+            .column {
+              float: left;
+              width: 50%;
+              padding: 10px;
+              height: 200px; 
+            }
+            
+            /* Clear floats after the columns */
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            label{
+                width: 80px;
+                display: inline-block;
+                
+            }
+            </style>
+        <link rel="stylesheet" href="static/main.css">
+
+        <title>Property Price Prediction Model</title>
+    </head>
+
+<body>
+    <style>
+        body {
+          background-image: url('https://images.unsplash.com/photo-1508349937151-22b68b72d5b1?ixlib=rb-1.2.1&w=1000&q=80');
+          
+          background-size: cover;
+          font-family: 'Lato', sans-serif;
+  
+}
+.trigger{
+  background-color: pink(233, 204, 204);
+  border: 2px solid lightblue;
+  border-radius: 30px;
+  text-decoration: none;
+  padding: 10px 28px;
+  color: black;
+  margin: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  
+}
+.trigger:hover{
+    background-color: rgb(241, 241, 225);
+    color: black;
+    border: 2px blue;
+}
+.button{
+  padding: 0;
+  font-size: 24px;
+  border: none;
+  background: none;
+  font-weight: 550;
+  margin: 0 1rem;
+  color: white;
+  list-style-type: none;
+  display: flex;
+}
+ nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+}
+li {
+    font-weight: 700;
+    margin: 0 1rem;
+}
+
+.content {
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 100px auto;
+  font-size: 50px;
+}
+#hero {
+   
+  color: white;
+
+}
+
+
+.container{
+  
+  
+  margin 0 auto;
+  background: #f9f9f9;
+  font-size: 24px;
+  padding: 25px;
+}
+.parallax1{
+  background: url('https://www.davieshomes.co.nz/wp-content/uploads/2019/08/davies-homes-house-background-4.jpg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 800px;
+}
+
+
+html {
+  scroll-behavior: smooth;
+ }
+ 
+ a {
+     font-size: 20px;
+    background-color: lightskyblue;
+	border: 2px solid white;
+	border-radius: 30px;
+	text-decoration: none;
+	padding: 10px 28px;
+	color: black;
+	margin-top: 10px;
+	display: inline-block;
+  
+ } 
+.prefs{
+  margin 0 auto;
+  background: #f9f9f9;
+  font-size: 16px;
+  padding: 25px;
+}
+.prefs2{
+  background-image: url('https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2.jpg.webp');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+ #getstarted{
+  
+  height: 250px;
+  margin-top: 40%;
+  padding-bottom: 30%;
+ }
+ #down {
+  background-image: url('https://www.davieshomes.co.nz/wp-content/uploads/2019/08/davies-homes-house-background-4.jpg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  font-weight: bold;
+  margin-top: 60%;
+  padding-bottom: 10%;
+ } 
+
+    </style>
+    <form name = "form" action = "{% url 'index' %}" method = "POST" >{% csrf_token %}
+      <div class="container">
+        <div class="parallax1">
+    <section id="hero">
+        <div class="header">
+          <nav>
+            <h1 style="font-size: 50px"> Property Price Prediction Model</h1>
+            
+            <ul>
+              <button class="button" onclick="Home()">Home</button>
+              <li>About</li>
+            </ul>
+          </div>
+        </nav>
+        <div class="content">
+            <br>
+            <p>Would You Like To Learn More ?</p>
+            <a href="#down">Learn More</a>
+          </div>
+    </section> 
+    <div >
+    <div id="down">
+      <h1 style="text-align: center;"> What We Do</h1>
+      <p style="text-align: center;">The product is an application in which the customers will be able to view the property prices with various options such as area, type of property and number of beds, baths,etc. for different price ranges.</p>
+    <h3 style="text-align: center;"> Target Population</h3>
+    <p> Our product is targeted at both buyers and sellers:</p>
+    <p>Client House Buyer: Given the recent social distancing law, the client will not be able to inspect and compare different prices of properties in the same area. However, the client can use our product to browse different locations and prices. With this new finding, they can understand which features (such as number of beds, car parks,etc.) affect different property prices. </p>
+    <p>Client House Seller: This is considered to be for the average house-flipper. This client will be able to take advantage of a feature that affects a house price the most. Such a house will be bought only to be sold quickly at a much higher price due to the market saturation. This method will allow a client to invest in a small cost to gain a large return. </p>
+    <a href="#getstarted">Get Started</a>
+  </div>
+  <div id="getstarted" >
+    <div class="prefs">
+      <div class="prefs2">
+    <div class="row" style="color:white; font-size: 20px">
+        <div class="column"  >
+            <h2 style="color:white"> Features </h2>
+            <div class="form-group">
+                <label for="Beds">Beds:</label>
+                <input value="2" type="text" class="form-control" placeholder="" name="Beds" id="Beds">
+            </div>
+            
+            <div class="form-group">
+              <label for="Baths">Baths:</label>
+              <input value="1" type="text" class="form-control" placeholder="" name="Baths" id="Baths">
+            </div>
+            
+            <div class="form-group">
+              <label for="Cars">Cars:</label>
+              <input value="1" type="text" class="form-control" placeholder="" name="Cars" id="Cars">
+            </div>
+            
+            <div class="form-group">
+              <label for="Area">Area:</label>
+              <input value="200" type="text" class="form-control" placeholder="" name="Area" id="Area">
+            </div>
+            
+            <div class="form-group">
+              <label for="Ptype">Ptype:</label>
+              <select class="form-control selectpicker" id="Ptype" name="Ptype">
+                  <option value="House">House</option>
+                  <option value="House: One Storey / Lowset">House: One Storey / Lowset</option>
+                  <option value="House: Semi Detached">House: Semi Detached</option>
+                  <option value="House: Two Storey / Highset">House: Two Storey / Highset</option>
+                  <option value="Unit">Unit</option>
+                  <option value="Unit: Standard">Unit: Standard</option>
+                  <option value="Other">Unit: Townhouse/Villa</option>
+              </select>
+            </div>
+            
+        </div>
+        <div class="column"  >
+            <h2 style="color:white"> Geographical Attributes </h2>
+            
+            <div class="form-group">
+                <label for="Date">Date:</label>
+                <input value="20" type="text" class="form-control" placeholder="" name="Date" id="Date">
+              </div>
+              
+              <div class="form-group">
+                <label for="Lat">Lat:</label>
+                <input value="-33" type="text" class="form-control" placeholder="" name="Lat" id="Lat">
+              </div>
+              
+              <div class="form-group">
+                <label for="Long">Long:</label>
+                <input value="151" type="text" class="form-control" placeholder="" name="Long" id="Long">
+              </div>
+              
+              <div class="form-group">
+                <label for="Dis">Dis:</label>
+                <input value="1.5" type="text" class="form-control" placeholder="" name="Dis" id="Dis">
+              </div>
+              
+            <div class="form-group">
+                <label for="NSW">NSW:</label>
+                <select class="form-control selectpicker" id="NSW" name="NSW">
+                <option value="2112">Ryde 2112</option>
+                <option value="2114">West Ryde 2114</option>
+                <option value="2118">Carlingford 2118</option>
+                <option value="2119">Beecroft 2119</option>
+                <option value="2120">Thornleigh / Pennant Hills 2120</option>
+                <option value="2122">Eastwood 2122</option>
+                <option value="2126">Cherrybrook 2126</option>
+                <option value="2151">North Parramatta 2151</option>
+                <option value="2152">Northmead 2152</option>
+                <option value="2153">Baulkham Hills / Winston Hills 2153</option>
+                <option value="2154">Castle Hill 2154</option>
+                </select>
+            </div>
+            
+        </div>
+    </div>
+    <br>
+            <button style="display:'';" type="submit" id='btn' class="btn btn-primary">Submit</button>
+                <button style="display:none;" id='btn-loading' class="btn btn-primary" disabled >
+                <span class="spinner-border spinner-border-sm"></span>
+                Generating..
+            </button>
+            </div>
+          </div>
+        </div>
+      </div>
+            
+            <br><br><br><br>
+        <p style="text-align: center; font-weight:bold ;color: beige;"><small>© Property Price Prediction Model. University of Technology, Sydney.<br>@Mark Gutierrez @Xu Jing @Gerald Ju @Kyaw Sithu</small><br></p>
+
+            </div>
+          </div>
+      </form> 
+    </body>
+</html>
+<script>
+
+  function Home() {
+    window.history.back();
+  }
+  
+</script>
